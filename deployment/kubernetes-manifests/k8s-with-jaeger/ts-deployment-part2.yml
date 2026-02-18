@@ -301,7 +301,7 @@ spec:
     spec:
       containers:
       - name: ts-cancel-service
-        image: codewisdom/ts-cancel-service-with-jaeger:v1
+        image: saad1038/ts-cancel-service:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 18885
@@ -441,7 +441,7 @@ spec:
     spec:
       containers:
       - name: ts-contacts-service
-        image: codewisdom/ts-contacts-service-with-jaeger:v1
+        image: saad1038/ts-contacts-service:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 12347
@@ -1421,7 +1421,7 @@ spec:
     spec:
       containers:
       - name: ts-voucher-service
-        image: codewisdom/ts-voucher-service-with-jaeger:v1
+        image: saad1038/ts-voucher-service:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 16101
