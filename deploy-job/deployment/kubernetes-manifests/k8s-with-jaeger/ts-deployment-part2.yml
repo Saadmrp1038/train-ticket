@@ -29,9 +29,9 @@
 #       - name: rest-service-collect
 #         image: header/rest-service-collect
 #         imagePullPolicy: IfNotPresent
-        env:
-        - name: JAEGER_AGENT_HOST
-          value: jaeger
+#         env:
+#         - name: JAEGER_AGENT_HOST
+#           value: jaeger
 #         ports:
 #         - containerPort: 9413
 #         volumeMounts:
