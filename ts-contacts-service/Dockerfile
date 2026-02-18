@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-alpine
+FROM eclipse-temurin:8-jre-alpine
 
 # Install timezone data and set Shanghai timezone
 RUN apk add --no-cache tzdata && \
