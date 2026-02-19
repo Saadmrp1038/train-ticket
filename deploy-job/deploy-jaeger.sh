@@ -57,7 +57,7 @@ function deploy_infrastructure {
   kubectl apply -f deployment/kubernetes-manifests/k8s-with-jaeger/ts-deployment-part1.yml -n "$namespace"
 
   echo "Waiting for MongoDB and Jaeger pods to be ready..."
-  wait_for_pods_ready "$namespace" 300
+  wait_for_pods_ready "$namespace" 120
 }
 
 # Step 2: Deploy all train-ticket services
@@ -73,7 +73,7 @@ function deploy_services {
   kubectl apply -f deployment/kubernetes-manifests/k8s-with-jaeger/ts-deployment-part2.yml -n "$namespace"
 
   echo "Waiting for service pods to be ready..."
-  wait_for_pods_ready "$namespace" 600
+  wait_for_pods_ready "$namespace" 900
 }
 
 # Step 3: Deploy UI dashboard
@@ -89,7 +89,7 @@ function deploy_ui {
   kubectl apply -f deployment/kubernetes-manifests/k8s-with-jaeger/ts-deployment-part3.yml -n "$namespace"
 
   echo "Waiting for UI pod to be ready..."
-  wait_for_pods_ready "$namespace" 120
+  wait_for_pods_ready "$namespace" 900
 }
 
 # Main execution
