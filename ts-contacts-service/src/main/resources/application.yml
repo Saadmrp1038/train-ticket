@@ -28,3 +28,8 @@ spring:
 
 swagger:
   controllerPackage: contacts.controller
+
+logging:
+  level:
+    dev.openfeature: OFF
+    io.grpc: OFF
