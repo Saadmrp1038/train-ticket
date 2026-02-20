@@ -57,7 +57,7 @@ function deploy_infrastructure {
   kubectl apply -f deployment/kubernetes-manifests/k8s-with-jaeger/ts-deployment-part1.yml -n "$namespace"
 
   echo "Waiting for MongoDB and Jaeger pods to be ready..."
-  wait_for_pods_ready "$namespace" 120
+  wait_for_pods_ready "$namespace" 180
 }
 
 # Step 2: Deploy all train-ticket services

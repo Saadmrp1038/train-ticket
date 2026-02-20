@@ -330,8 +330,8 @@ spec:
         env:
         - name: JAEGER_AGENT_HOST
           value: jaeger
-        - name: SPRING_CLOUD_NACOS_DISCOVERY_ENABLED
-          value: "false"
+        - name: NACOS_ADDRS
+          value: nacos:8848
         ports:
         - containerPort: 18885
         resources:
@@ -484,8 +484,8 @@ spec:
         env:
         - name: JAEGER_AGENT_HOST
           value: jaeger
-        - name: SPRING_CLOUD_NACOS_DISCOVERY_ENABLED
-          value: "false"
+        - name: NACOS_ADDRS
+          value: nacos:8848
         ports:
         - containerPort: 12347
         resources:
