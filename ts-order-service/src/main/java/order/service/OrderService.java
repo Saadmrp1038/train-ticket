@@ -1,42 +1,55 @@
 package order.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import edu.fudan.common.entity.Seat;
+import edu.fudan.common.util.Response;
+import order.entity.Order;
+import order.entity.OrderAlterInfo;
+import order.entity.OrderInfo;
+import org.springframework.http.HttpHeaders;
 
-@Service
-public class OrderService {
+import java.util.ArrayList;
+import java.util.Date;
 
-    @Autowired
-    private FeatureFlagService featureFlagService;
+/**
+ * @author fdse
+ */
+public interface OrderService {
 
-    public boolean cancelOrder(String orderId, String loginToken) {
+    Response getSoldTickets(Seat seatRequest, HttpHeaders headers);
 
-        System.out.println("[TrainTicket][Order] Processing order cancellation: " + orderId);
+    Response create(Order order, HttpHeaders headers);
 
-        featureFlagService.isEnabled("fault-1-async-message-order");
+    Response addNewOrder(Order order, HttpHeaders headers);
 
-        try {
-            updateOrderStatus(orderId, "CANCELLING");
+    Response queryOrders(OrderInfo qi, String accountId, HttpHeaders headers);
 
-            Thread.sleep(1000);
+    Response queryOrdersForRefresh(OrderInfo qi, String accountId, HttpHeaders headers);
 
-            updateOrderStatus(orderId, "CANCELLED");
+    Response saveChanges(Order order, HttpHeaders headers);
 
-            System.out.println("[TrainTicket][Order] Order cancellation completed: " + orderId);
-            return true;
+    Response cancelOrder(String accountId, String orderId, HttpHeaders headers);
 
-        } catch (Exception e) {
-            System.err.println("[TrainTicket][Order] Order cancellation failed: " + e.getMessage());
-            return false;
-        }
-    }
+    Response queryAlreadySoldOrders(Date travelDate, String trainNumber, HttpHeaders headers);
 
-    public void updateOrderStatus(String orderId, String status) {
+    Response getAllOrders(HttpHeaders headers);
 
-        long timestamp = System.currentTimeMillis();
+    Response modifyOrder(String orderId, int status, HttpHeaders headers);
 
-        featureFlagService.isEnabled("fault-1-async-message-order");
+    Response getOrderPrice(String orderId, HttpHeaders headers);
 
-        System.out.println("[TrainTicket][Order] Updated order " + orderId + " status to: " + status);
-    }
+    Response payOrder(String orderId, HttpHeaders headers);
+
+    Response getOrderById(String orderId, HttpHeaders headers);
+
+    void initOrder(Order order, HttpHeaders headers);
+
+    Response checkSecurityAboutOrder(Date dateFrom, String accountId, HttpHeaders headers);
+
+    Response deleteOrder(String orderId, HttpHeaders headers);
+
+    Response alterOrder(OrderAlterInfo oai, HttpHeaders headers);
+
+    Response updateOrder(Order order, HttpHeaders headers);
+
+    Response findOrderById(String id, HttpHeaders headers);
 }

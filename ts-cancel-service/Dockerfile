@@ -1,4 +1,4 @@
-FROM eclipse-temurin:8-jre-alpine
+FROM eclipse-temurin:8-jre
 
 LABEL maintainer="TrainTicket F1 Fault Injection"
 

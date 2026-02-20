@@ -1,6 +1,8 @@
-FROM openresty/openresty:trusty
+FROM openresty/openresty:alpine
 
-RUN /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone
+RUN apk add --no-cache tzdata && \
+    cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+    echo 'Asia/Shanghai' > /etc/timezone
 
 COPY nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
 

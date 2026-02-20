@@ -14,9 +14,13 @@ spec:
     spec:
       containers:
         - name: ts-admin-basic-info-service
-          image: codewisdom/ts-admin-basic-info-service:1.0.0
+          image: saad1038/ts-admin-basic-info-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -56,9 +60,13 @@ spec:
     spec:
       containers:
         - name: ts-admin-order-service
-          image: codewisdom/ts-admin-order-service:1.0.1
+          image: saad1038/ts-admin-order-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -98,9 +106,13 @@ spec:
     spec:
       containers:
         - name: ts-admin-route-service
-          image: codewisdom/ts-admin-route-service:1.0.0
+          image: saad1038/ts-admin-route-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -140,9 +152,13 @@ spec:
     spec:
       containers:
         - name: ts-admin-travel-service
-          image: codewisdom/ts-admin-travel-service:1.0.0
+          image: saad1038/ts-admin-travel-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -182,9 +198,13 @@ spec:
     spec:
       containers:
         - name: ts-admin-user-service
-          image: codewisdom/ts-admin-user-service:1.0.1
+          image: saad1038/ts-admin-user-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -224,9 +244,13 @@ spec:
     spec:
       containers:
         - name: ts-assurance-service
-          image: codewisdom/ts-assurance-service:1.0.0
+          image: saad1038/ts-assurance-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -268,9 +292,13 @@ spec:
     spec:
       containers:
         - name: ts-auth-service
-          image: codewisdom/ts-auth-service:1.0.0
+          image: saad1038/ts-auth-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -312,9 +340,13 @@ spec:
     spec:
       containers:
         - name: ts-avatar-service
-          image: codewisdom/ts-avatar-service:0.2.0
+          image: saad1038/ts-avatar-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -354,9 +386,13 @@ spec:
     spec:
       containers:
         - name: ts-basic-service
-          image: codewisdom/ts-basic-service:1.0.0
+          image: saad1038/ts-basic-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -399,6 +435,10 @@ spec:
           image: saad1038/ts-cancel-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -438,9 +478,13 @@ spec:
     spec:
       containers:
         - name: ts-config-service
-          image: codewisdom/ts-config-service:1.0.0
+          image: saad1038/ts-config-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -482,9 +526,13 @@ spec:
     spec:
       containers:
         - name: ts-consign-price-service
-          image: codewisdom/ts-consign-price-service:1.0.0
+          image: saad1038/ts-consign-price-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -526,9 +574,13 @@ spec:
     spec:
       containers:
         - name: ts-consign-service
-          image: codewisdom/ts-consign-service:1.0.1
+          image: saad1038/ts-consign-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -573,6 +625,10 @@ spec:
           image: saad1038/ts-contacts-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -614,9 +670,13 @@ spec:
     spec:
       containers:
         - name: ts-delivery-service
-          image: codewisdom/ts-delivery-service:1.0.0
+          image: saad1038/ts-delivery-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -660,9 +720,13 @@ spec:
     spec:
       containers:
         - name: ts-execute-service
-          image: codewisdom/ts-execute-service:1.0.0
+          image: saad1038/ts-execute-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -702,9 +766,13 @@ spec:
     spec:
       containers:
         - name: ts-food-service
-          image: codewisdom/ts-food-service:1.0.0
+          image: saad1038/ts-food-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -748,9 +816,13 @@ spec:
     spec:
       containers:
         - name: ts-food-delivery-service
-          image: codewisdom/ts-food-delivery-service:1.0.0
+          image: saad1038/ts-food-delivery-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -792,9 +864,13 @@ spec:
     spec:
       containers:
         - name: ts-gateway-service
-          image: codewisdom/ts-gateway-service:1.0.0
+          image: saad1038/ts-gateway-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -834,9 +910,13 @@ spec:
     spec:
       containers:
         - name: ts-inside-payment-service
-          image: codewisdom/ts-inside-payment-service:1.0.0
+          image: saad1038/ts-inside-payment-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -878,9 +958,13 @@ spec:
     spec:
       containers:
         - name: ts-news-service
-          image: codewisdom/ts-news-service:1.0.0
+          image: saad1038/ts-news-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -920,9 +1004,13 @@ spec:
     spec:
       containers:
         - name: ts-notification-service
-          image: codewisdom/ts-notification-service:1.0.0
+          image: saad1038/ts-notification-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -966,9 +1054,13 @@ spec:
     spec:
       containers:
         - name: ts-order-other-service
-          image: codewisdom/ts-order-other-service:1.0.1
+          image: saad1038/ts-order-other-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -1012,9 +1104,13 @@ spec:
     spec:
       containers:
         - name: ts-order-service
-          image: codewisdom/ts-order-service:1.0.1
+          image: saad1038/ts-order-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -1058,9 +1154,13 @@ spec:
     spec:
       containers:
         - name: ts-payment-service
-          image: codewisdom/ts-payment-service:1.0.0
+          image: saad1038/ts-payment-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -1102,9 +1202,13 @@ spec:
     spec:
       containers:
         - name: ts-preserve-other-service
-          image: codewisdom/ts-preserve-other-service:1.0.0
+          image: saad1038/ts-preserve-other-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -1146,9 +1250,13 @@ spec:
     spec:
       containers:
         - name: ts-preserve-service
-          image: codewisdom/ts-preserve-service:1.0.0
+          image: saad1038/ts-preserve-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -1190,9 +1298,13 @@ spec:
     spec:
       containers:
         - name: ts-price-service
-          image: codewisdom/ts-price-service:1.0.0
+          image: saad1038/ts-price-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -1234,9 +1346,13 @@ spec:
     spec:
       containers:
         - name: ts-rebook-service
-          image: codewisdom/ts-rebook-service:1.0.1
+          image: saad1038/ts-rebook-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -1278,9 +1394,13 @@ spec:
     spec:
       containers:
         - name: ts-route-plan-service
-          image: codewisdom/ts-route-plan-service:1.0.0
+          image: saad1038/ts-route-plan-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -1320,9 +1440,13 @@ spec:
     spec:
       containers:
         - name: ts-route-service
-          image: codewisdom/ts-route-service:1.0.0
+          image: saad1038/ts-route-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -1364,9 +1488,13 @@ spec:
     spec:
       containers:
         - name: ts-seat-service
-          image: codewisdom/ts-seat-service:1.0.0
+          image: saad1038/ts-seat-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -1406,9 +1534,13 @@ spec:
     spec:
       containers:
         - name: ts-security-service
-          image: codewisdom/ts-security-service:1.0.0
+          image: saad1038/ts-security-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -1450,9 +1582,13 @@ spec:
     spec:
       containers:
         - name: ts-station-food-service
-          image: codewisdom/ts-station-food-service:1.0.0
+          image: saad1038/ts-station-food-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -1494,9 +1630,13 @@ spec:
     spec:
       containers:
         - name: ts-station-service
-          image: codewisdom/ts-station-service:1.0.1
+          image: saad1038/ts-station-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -1538,9 +1678,13 @@ spec:
     spec:
       containers:
         - name: ts-ticket-office-service
-          image: codewisdom/ts-ticket-office-service:1.0.0
+          image: saad1038/ts-ticket-office-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -1582,9 +1726,13 @@ spec:
     spec:
       containers:
         - name: ts-train-food-service
-          image: codewisdom/ts-train-food-service:1.0.0
+          image: saad1038/ts-train-food-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -1626,9 +1774,13 @@ spec:
     spec:
       containers:
         - name: ts-train-service
-          image: codewisdom/ts-train-service:1.0.0
+          image: saad1038/ts-train-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -1670,9 +1822,13 @@ spec:
     spec:
       containers:
         - name: ts-travel-plan-service
-          image: codewisdom/ts-travel-plan-service:1.0.0
+          image: saad1038/ts-travel-plan-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -1712,9 +1868,13 @@ spec:
     spec:
       containers:
         - name: ts-travel-service
-          image: codewisdom/ts-travel-service:1.0.0
+          image: saad1038/ts-travel-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -1756,9 +1916,13 @@ spec:
     spec:
       containers:
         - name: ts-travel2-service
-          image: codewisdom/ts-travel2-service:1.0.0
+          image: saad1038/ts-travel2-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -1800,9 +1964,13 @@ spec:
     spec:
       containers:
         - name: ts-user-service
-          image: codewisdom/ts-user-service:1.0.1
+          image: saad1038/ts-user-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -1844,9 +2012,13 @@ spec:
     spec:
       containers:
         - name: ts-verification-code-service
-          image: codewisdom/ts-verification-code-service:1.0.0
+          image: saad1038/ts-verification-code-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -1889,6 +2061,10 @@ spec:
           image: saad1038/ts-voucher-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -1930,9 +2106,13 @@ spec:
     spec:
       containers:
         - name: ts-wait-order-service
-          image: codewisdom/ts-wait-order-service:1.0.1
+          image: saad1038/ts-wait-order-service:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: SPRING_MAIN_ALLOW_CIRCULAR_REFERENCES
+              value: "true"
+            - name: JAVA_TOOL_OPTIONS
+              value: "-Dspring.mvc.pathmatch.matching-strategy=ant-path-matcher"
             - name: NODE_IP
               valueFrom:
                 fieldRef:
@@ -1974,7 +2154,7 @@ spec:
     spec:
       containers:
         - name: ts-ui-dashboard
-          image: codewisdom/ts-ui-dashboard:1.0.1
+          image: saad1038/ts-ui-dashboard:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
