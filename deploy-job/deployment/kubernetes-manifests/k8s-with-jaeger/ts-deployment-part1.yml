@@ -1013,16 +1013,16 @@ spec:
           name: raft-grpc
         resources:
           requests:
-            cpu: 100m
+            cpu: 250m
             memory: 600Mi
           limits:
-            cpu: 500m
-            memory: 1Gi
+            cpu: 1000m
+            memory: 2Gi
         readinessProbe:
           httpGet:
             path: /nacos/v1/console/health/readiness
             port: 8848
-          initialDelaySeconds: 30
+          initialDelaySeconds: 60
           periodSeconds: 10
           timeoutSeconds: 5
 
