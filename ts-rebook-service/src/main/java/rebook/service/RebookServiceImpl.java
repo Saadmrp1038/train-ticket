@@ -162,6 +162,10 @@ public class RebookServiceImpl implements RebookService {
 
         TripAllDetail gtdr = (TripAllDetail) gtdrResposne.getData();
 
+        if (gtdr == null || gtdr.getTripResponse() == null) {
+            RebookServiceImpl.LOGGER.warn("[payDifference][Pay difference warn][Trip detail not found][TripId: {}]", info.getTripId());
+            return new Response<>(0, "Trip detail not found, can't pay difference", null);
+        }
 
         String ticketPrice = "0";
         if (info.getSeatType() == SeatClass.FIRSTCLASS.getCode()) {
