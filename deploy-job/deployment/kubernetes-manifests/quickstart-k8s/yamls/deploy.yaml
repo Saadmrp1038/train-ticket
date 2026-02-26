@@ -396,7 +396,7 @@ spec:
     spec:
       containers:
         - name: ts-cancel-service
-          image: saad1038/ts-cancel-service:latest
+          image: ghcr.io/sregym/ts-cancel-service:latest
           imagePullPolicy: IfNotPresent
           env:
             - name: NODE_IP
@@ -570,7 +570,7 @@ spec:
     spec:
       containers:
         - name: ts-contacts-service
-          image: saad1038/ts-contacts-service:latest
+          image: ghcr.io/sregym/ts-contacts-service:latest
           imagePullPolicy: IfNotPresent
           env:
             - name: NODE_IP
@@ -1886,7 +1886,7 @@ spec:
     spec:
       containers:
         - name: ts-voucher-service
-          image: saad1038/ts-voucher-service:latest
+          image: ghcr.io/sregym/ts-voucher-service:latest
           imagePullPolicy: IfNotPresent
           env:
             - name: NODE_IP

@@ -29,9 +29,9 @@
 #       - name: rest-service-collect
 #         image: header/rest-service-collect
 #         imagePullPolicy: IfNotPresent
-        env:
-        - name: JAEGER_AGENT_HOST
-          value: jaeger
+#         env:
+#         - name: JAEGER_AGENT_HOST
+#           value: jaeger
 #         ports:
 #         - containerPort: 9413
 #         volumeMounts:
@@ -67,17 +67,17 @@ spec:
         - containerPort: 18767
         resources:
           requests:
-            cpu: 50m
-            memory: 100Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 18767
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5   
+          timeoutSeconds: 5
 ---
 
 
@@ -106,11 +106,11 @@ spec:
         - containerPort: 16112
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 16112
@@ -144,11 +144,11 @@ spec:
         - containerPort: 16113
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 16113
@@ -182,11 +182,11 @@ spec:
         - containerPort: 16114
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 16114
@@ -220,11 +220,11 @@ spec:
         - containerPort: 16115
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 16115
@@ -258,11 +258,11 @@ spec:
         - containerPort: 18888
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 18888
@@ -296,11 +296,11 @@ spec:
         - containerPort: 15680
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 15680
@@ -325,20 +325,22 @@ spec:
     spec:
       containers:
       - name: ts-cancel-service
-        image: codewisdom/ts-cancel-service-with-jaeger:v1
+        image: ghcr.io/sregym/ts-cancel-service:latest
         imagePullPolicy: IfNotPresent
         env:
         - name: JAEGER_AGENT_HOST
           value: jaeger
+        - name: NACOS_ADDRS
+          value: nacos:8848
         ports:
         - containerPort: 18885
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 18885
@@ -372,11 +374,11 @@ spec:
         - containerPort: 15679
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 15679
@@ -410,11 +412,11 @@ spec:
         - containerPort: 16110
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 16110
@@ -448,11 +450,11 @@ spec:
         - containerPort: 16111
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 16111
@@ -477,26 +479,28 @@ spec:
     spec:
       containers:
       - name: ts-contacts-service
-        image: codewisdom/ts-contacts-service-with-jaeger:v1
+        image: ghcr.io/sregym/ts-contacts-service:latest
         imagePullPolicy: IfNotPresent
         env:
         - name: JAEGER_AGENT_HOST
           value: jaeger
+        - name: NACOS_ADDRS
+          value: nacos:8848
         ports:
         - containerPort: 12347
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 12347
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5 
+          timeoutSeconds: 5
 ---
 
 apiVersion: apps/v1
@@ -524,11 +528,11 @@ spec:
         - containerPort: 12386
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 12386
@@ -562,11 +566,11 @@ spec:
         - containerPort: 18855
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 18855
@@ -600,11 +604,11 @@ spec:
         - containerPort: 18856
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 18856
@@ -638,11 +642,11 @@ spec:
         - containerPort: 18673
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 18673
@@ -676,17 +680,17 @@ spec:
         - containerPort: 12340
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 12340
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5 
+          timeoutSeconds: 5
 ---
 
 apiVersion: apps/v1
@@ -714,11 +718,11 @@ spec:
         - containerPort: 12862
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 12862
@@ -752,11 +756,11 @@ spec:
         - containerPort: 17853
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 17853
@@ -790,11 +794,11 @@ spec:
         - containerPort: 12032
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 12032
@@ -828,11 +832,11 @@ spec:
         - containerPort: 12031
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 12031
@@ -866,17 +870,17 @@ spec:
         - containerPort: 19001
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 19001
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5 
+          timeoutSeconds: 5
 ---
 
 apiVersion: apps/v1
@@ -904,11 +908,11 @@ spec:
         - containerPort: 14569
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 14569
@@ -942,11 +946,11 @@ spec:
         - containerPort: 14568
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 14568
@@ -980,11 +984,11 @@ spec:
         - containerPort: 16579
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 16579
@@ -1018,17 +1022,17 @@ spec:
         - containerPort: 18886
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 18886
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5 
+          timeoutSeconds: 5
 ---
 
 apiVersion: apps/v1
@@ -1056,11 +1060,11 @@ spec:
         - containerPort: 14578
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 14578
@@ -1094,17 +1098,17 @@ spec:
         - containerPort: 11178
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 11178
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5 
+          timeoutSeconds: 5
 ---
 
 apiVersion: apps/v1
@@ -1132,17 +1136,17 @@ spec:
         - containerPort: 18898
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 18898
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5 
+          timeoutSeconds: 5
 ---
 
 apiVersion: apps/v1
@@ -1170,11 +1174,11 @@ spec:
         - containerPort: 11188
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 11188
@@ -1208,17 +1212,17 @@ spec:
         - containerPort: 12342
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 12342
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5 
+          timeoutSeconds: 5
 ---
 
 apiVersion: apps/v1
@@ -1246,11 +1250,11 @@ spec:
         - containerPort: 12345
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 12345
@@ -1271,7 +1275,7 @@ spec:
   template:
     metadata:
       labels:
-        app: ts-ticket-office-service 
+        app: ts-ticket-office-service
     spec:
       containers:
       - name: ts-ticket-office-service
@@ -1284,17 +1288,17 @@ spec:
         - containerPort: 16108
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 16108
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5 
+          timeoutSeconds: 5
 ---
 
 apiVersion: apps/v1
@@ -1322,17 +1326,17 @@ spec:
         - containerPort: 15681
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 15681
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5 
+          timeoutSeconds: 5
 ---
 
 apiVersion: apps/v1
@@ -1360,17 +1364,17 @@ spec:
         - containerPort: 14567
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 14567
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5 
+          timeoutSeconds: 5
 ---
 
 apiVersion: apps/v1
@@ -1398,11 +1402,11 @@ spec:
         - containerPort: 16346
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 16346
@@ -1436,11 +1440,11 @@ spec:
         - containerPort: 14322
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 14322
@@ -1474,17 +1478,17 @@ spec:
         - containerPort: 12346
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 12346
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5 
+          timeoutSeconds: 5
 ---
 
 apiVersion: apps/v1
@@ -1512,11 +1516,11 @@ spec:
         - containerPort: 15678
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 15678
@@ -1541,7 +1545,7 @@ spec:
     spec:
       containers:
       - name: ts-voucher-service
-        image: codewisdom/ts-voucher-service-with-jaeger:v1
+        image: ghcr.io/sregym/ts-voucher-service:latest
         imagePullPolicy: IfNotPresent
         env:
         - name: JAEGER_AGENT_HOST
@@ -1550,17 +1554,17 @@ spec:
         - containerPort: 16101
         resources:
           requests:
-            cpu: 50m
-            memory: 160Mi
+            cpu: 100m
+            memory: 300Mi
           limits:
-            cpu: 200m
-            memory: 500Mi
+            cpu: 500m
+            memory: 2000Mi
         readinessProbe:
           tcpSocket:
             port: 16101
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5 
+          timeoutSeconds: 5
 ---
 
 apiVersion: v1

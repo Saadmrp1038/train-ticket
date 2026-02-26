@@ -71,7 +71,7 @@ spec:
             port: 18767
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5   
+          timeoutSeconds: 5
 ---
 
 
@@ -301,7 +301,7 @@ spec:
     spec:
       containers:
       - name: ts-cancel-service
-        image: codewisdom/ts-cancel-service-with-jaeger:v1
+        image: ghcr.io/sregym/ts-cancel-service:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 18885
@@ -441,7 +441,7 @@ spec:
     spec:
       containers:
       - name: ts-contacts-service
-        image: codewisdom/ts-contacts-service-with-jaeger:v1
+        image: ghcr.io/sregym/ts-contacts-service:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 12347
@@ -457,7 +457,7 @@ spec:
             port: 12347
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5 
+          timeoutSeconds: 5
 ---
 
 apiVersion: apps/v1
@@ -632,7 +632,7 @@ spec:
             port: 12340
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5 
+          timeoutSeconds: 5
 ---
 
 apiVersion: apps/v1
@@ -807,7 +807,7 @@ spec:
             port: 19001
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5 
+          timeoutSeconds: 5
 ---
 
 apiVersion: apps/v1
@@ -947,7 +947,7 @@ spec:
             port: 18886
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5 
+          timeoutSeconds: 5
 ---
 
 apiVersion: apps/v1
@@ -1017,7 +1017,7 @@ spec:
             port: 11178
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5 
+          timeoutSeconds: 5
 ---
 
 apiVersion: apps/v1
@@ -1052,7 +1052,7 @@ spec:
             port: 18898
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5 
+          timeoutSeconds: 5
 ---
 
 apiVersion: apps/v1
@@ -1122,7 +1122,7 @@ spec:
             port: 12342
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5 
+          timeoutSeconds: 5
 ---
 
 apiVersion: apps/v1
@@ -1172,7 +1172,7 @@ spec:
   template:
     metadata:
       labels:
-        app: ts-ticket-office-service 
+        app: ts-ticket-office-service
     spec:
       containers:
       - name: ts-ticket-office-service
@@ -1192,7 +1192,7 @@ spec:
             port: 16108
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5 
+          timeoutSeconds: 5
 ---
 
 apiVersion: apps/v1
@@ -1227,7 +1227,7 @@ spec:
             port: 15681
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5 
+          timeoutSeconds: 5
 ---
 
 apiVersion: apps/v1
@@ -1262,7 +1262,7 @@ spec:
             port: 14567
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5 
+          timeoutSeconds: 5
 ---
 
 apiVersion: apps/v1
@@ -1367,7 +1367,7 @@ spec:
             port: 12346
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5 
+          timeoutSeconds: 5
 ---
 
 apiVersion: apps/v1
@@ -1421,7 +1421,7 @@ spec:
     spec:
       containers:
       - name: ts-voucher-service
-        image: codewisdom/ts-voucher-service-with-jaeger:v1
+        image: ghcr.io/sregym/ts-voucher-service:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 16101
@@ -1437,7 +1437,7 @@ spec:
             port: 16101
           initialDelaySeconds: 160
           periodSeconds: 10
-          timeoutSeconds: 5 
+          timeoutSeconds: 5
 ---
 
 apiVersion: v1

@@ -44,14 +44,11 @@ public class CancelApplication {
             // Constructor: FlagdProvider(host, port, tls, socketPath)
             // Note: Java version doesn't have explicit cache disable like Python's CacheType.DISABLED
             FlagdProvider provider = new FlagdProvider("flagd", 8013, false, null);
-                
+
             OpenFeatureAPI.getInstance().setProvider(provider);
-            
-            System.out.println("[TrainTicket][Cancel][Feature Flags] Connected to flagd at flagd:8013");
-            
+
         } catch (Exception e) {
-            System.err.println("[TrainTicket][Cancel][Feature Flags] Failed to initialize: " + e.getMessage());
-            e.printStackTrace();
+            // silently ignore
         }
     }
 }

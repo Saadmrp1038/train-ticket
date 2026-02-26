@@ -1,11 +1,13 @@
-FROM python:3
+FROM python:3.9-bookworm
 
 RUN /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone
 
 RUN apt update -y
 RUN apt install -y cmake
-RUN apt install -y libgl1-mesa-glx
+RUN apt install -y libgl1
 
+# Pin to an older version that works with dlib 19.24.2
+ENV CMAKE_POLICY_VERSION_MINIMUM=3.5
 ENV PYTHONUNBUFFERED=TRUE
 
 RUN mkdir -p /app

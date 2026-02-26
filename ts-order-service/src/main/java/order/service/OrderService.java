@@ -1,48 +1,55 @@
 package order.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import edu.fudan.common.entity.Seat;
+import edu.fudan.common.util.Response;
+import order.entity.Order;
+import order.entity.OrderAlterInfo;
+import order.entity.OrderInfo;
+import org.springframework.http.HttpHeaders;
 
-@Service
-public class OrderService {
+import java.util.ArrayList;
+import java.util.Date;
 
-    @Autowired
-    private FeatureFlagService featureFlagService;
+/**
+ * @author fdse
+ */
+public interface OrderService {
 
-    public boolean cancelOrder(String orderId, String loginToken) {
-        
-        System.out.println("[TrainTicket][Order] Processing order cancellation: " + orderId);
-        
-        if (featureFlagService.isEnabled("fault-1-async-message-order")) {
-            System.out.println("[TrainTicket][Order][F1 MONITORING] F1 fault is active during order cancellation");
-            System.out.println("[TrainTicket][Order][F1 MONITORING] Monitoring async message sequence");
-        }
-        
-        try {
-            updateOrderStatus(orderId, "CANCELLING");
-            
-            Thread.sleep(1000);
-            
-            updateOrderStatus(orderId, "CANCELLED");
-            
-            System.out.println("[TrainTicket][Order] Order cancellation completed: " + orderId);
-            return true;
-            
-        } catch (Exception e) {
-            System.err.println("[TrainTicket][Order] Order cancellation failed: " + e.getMessage());
-            return false;
-        }
-    }
-    
-    public void updateOrderStatus(String orderId, String status) {
-        
-        long timestamp = System.currentTimeMillis();
-        
-        if (featureFlagService.isEnabled("fault-1-async-message-order")) {
-            System.out.println("[TrainTicket][Order][F1 ANALYSIS] Order status change: " + orderId + " -> " + status + " at " + timestamp);
-            System.out.println("[TrainTicket][Order][F1 ANALYSIS] This timing is critical for F1 fault detection");
-        }
-        
-        System.out.println("[TrainTicket][Order] Updated order " + orderId + " status to: " + status);
-    }
+    Response getSoldTickets(Seat seatRequest, HttpHeaders headers);
+
+    Response create(Order order, HttpHeaders headers);
+
+    Response addNewOrder(Order order, HttpHeaders headers);
+
+    Response queryOrders(OrderInfo qi, String accountId, HttpHeaders headers);
+
+    Response queryOrdersForRefresh(OrderInfo qi, String accountId, HttpHeaders headers);
+
+    Response saveChanges(Order order, HttpHeaders headers);
+
+    Response cancelOrder(String accountId, String orderId, HttpHeaders headers);
+
+    Response queryAlreadySoldOrders(Date travelDate, String trainNumber, HttpHeaders headers);
+
+    Response getAllOrders(HttpHeaders headers);
+
+    Response modifyOrder(String orderId, int status, HttpHeaders headers);
+
+    Response getOrderPrice(String orderId, HttpHeaders headers);
+
+    Response payOrder(String orderId, HttpHeaders headers);
+
+    Response getOrderById(String orderId, HttpHeaders headers);
+
+    void initOrder(Order order, HttpHeaders headers);
+
+    Response checkSecurityAboutOrder(Date dateFrom, String accountId, HttpHeaders headers);
+
+    Response deleteOrder(String orderId, HttpHeaders headers);
+
+    Response alterOrder(OrderAlterInfo oai, HttpHeaders headers);
+
+    Response updateOrder(Order order, HttpHeaders headers);
+
+    Response findOrderById(String id, HttpHeaders headers);
 }

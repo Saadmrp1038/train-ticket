@@ -42,12 +42,9 @@ public class ContactsApplication {
             // Configure FlagdProvider with explicit settings
             FlagdProvider provider = new FlagdProvider("flagd", 8013, false, null);
             OpenFeatureAPI.getInstance().setProvider(provider);
-            
-            System.out.println("[TrainTicket][Contacts][Feature Flags] Connected to flagd at flagd:8013");
-            
+
         } catch (Exception e) {
-            System.err.println("[TrainTicket][Contacts][Feature Flags] Failed to initialize: " + e.getMessage());
-            e.printStackTrace();
+            // silently ignore
         }
     }
 }

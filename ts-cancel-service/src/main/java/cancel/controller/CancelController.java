@@ -63,31 +63,28 @@ public class CancelController {
     @CrossOrigin(origins = "*")
     @GetMapping(path = "/test/flag/{flagName}")
     public HttpEntity testFlag(@PathVariable String flagName, @RequestHeader HttpHeaders headers) {
-        CancelController.LOGGER.info("[testFlag][Testing Feature Flag][Flag: {}]", flagName);
-        
+
         try {
             boolean flagValue = featureFlagService.isEnabled(flagName);
-            
+
             // Create a simple response with flag info
             String message = String.format("Flag '%s' is %s", flagName, flagValue ? "ENABLED" : "DISABLED");
-            
+
             Response<String> response = new Response<>();
             response.setStatus(1);  // Success
             response.setMsg(message);
             response.setData(String.valueOf(flagValue));
-            
-            CancelController.LOGGER.info("[testFlag][Flag Test Result][Flag: {}, Value: {}]", flagName, flagValue);
-            
+
             return ok(response);
-            
+
         } catch (Exception e) {
-            CancelController.LOGGER.error("[testFlag][Flag Test Error][Flag: {}][Error: {}]", flagName, e.getMessage());
-            
+            CancelController.LOGGER.error("[testFlag][Error: {}]", e.getMessage());
+
             Response<String> errorResponse = new Response<>();
             errorResponse.setStatus(0);  // Error
             errorResponse.setMsg("Error testing flag: " + e.getMessage());
             errorResponse.setData("false");
-            
+
             return ok(errorResponse);
         }
     }

@@ -16,3 +16,8 @@ spring:
 
 swagger:
   controllerPackage: cancel.controller
+
+logging:
+  level:
+    dev.openfeature: OFF
+    io.grpc: OFF
