@@ -55,6 +55,8 @@ spec:
         - name: config-volume
           configMap:
             name: alertmanager-config
+        - name: alertmanager-data
+          emptyDir: {}
         - name: timezone
           hostPath:
             path: /usr/share/zoneinfo/Asia/Shanghai
